@@ -18,24 +18,36 @@ body {
     background-color: #ffffff;
 }
 
-header {	position: relative;	background: #000 url("../images/header.jpg") left top no-repeat;	height: 115px;	padding: 0;	width: 100%;	cursor: default;	}
+header {
+	position: relative;	background: #000 url("../images/header.jpg") left top no-repeat;	height: 115px;	padding: 0;	width: 100%;	cursor: default;}
 
-aside{	position: relative;	float: left;	max-width: 20%;	margin: 0;	padding: 1em;	min-height: 200px;}
-#topContent {	position: relative;	float: left;	max-width: 100%;	margin: 0;	padding: 1em;	padding: 10px;	}
+aside{
+	position: relative;	float: left;	max-width: 20%;	margin: 0;	padding: 1em;	min-height: 200px;}
+#topContent {
+	position: relative;	float: left;	max-width: 100%;
+	margin: 0;	padding: 1em;	padding: 10px;}
 
-#mainContent {	position: relative;	background-color: #ffffff;	margin: 0 auto;	padding: 10px;	width: 80%;}
-footer{	width: 100%;	height: 50px;	text-align: center;	padding: 0;	margin: 0;	background-color:  #f45d4f;}
+#mainContent {
+	position: relative;	background-color: #ffffff;	margin: 0 auto;	padding: 10px;	width: 80%;}
+footer {
+	width: 100%;	height: 50px;	text-align: center;	padding: 0;	margin: 0;	background-color:  #f45d4f;}
 
-footer p {	margin: 0 auto;	color: #fff;	text-align: center;	padding-top: 15px;}
+footer p {
+	margin: 0 auto;	color: #fff;	text-align: center;	padding-top: 15px;}
 
-.clearfloat {	clear: both;	margin: 0;	border: 0;	padding: 0;	}
+.clearfloat {
+	clear: both;	margin: 0;	border: 0;	padding: 0;}
 
-blockquote {	border-left: none;	color: #404040;	min-height: 45px;	font-style: italic;	padding-left: 28px;	background: url("../images/icon-text-blockquote.png") no-repeat top left;	border-bottom: 1px solid #efefef;	padding-bottom: 2px;	margin-bottom: 10px;}
-h1, #topContent  h1 {	font-weight: bold;	color: #444;	font-size: 2.2em;	font-size: 18pt;	text-align: center;    margin: 0 0 10px 0;
+blockquote {
+	border-left: none;	color: #404040;	min-height: 45px;	font-style: italic;	padding-left: 28px;	background: url("../images/icon-text-blockquote.png") no-repeat top left;	border-bottom: 1px solid #efefef;	padding-bottom: 2px;	margin-bottom: 10px;}
+h1, #topContent  h1 {
+	font-weight: bold;	color: #444;	font-size: 2.2em;	font-size: 18pt;	text-align: center;    margin: 0 0 10px 0;
 	border-bottom: 2px solid #f45d4f;	padding-bottom: 10px;}
-h2, #topContent h2 {	font-weight: 300;	color: #444;	font-size: 1.7em;	text-transform: uppercase;	text-align: center;	margin-bottom: 20px;}
+h2, #topContent h2 {
+	font-weight: 300;	color: #444;	font-size: 1.7em;	text-transform: uppercase;	text-align: center;	margin-bottom: 20px;}
 
-h3, h3#topContent, h3#container {	font-size: 1.5em;	color: #444;	font-weight: bold;	text-transform: uppercase;	text-align: center;	margin-bottom: 20px;}
+h3, h3#topContent, h3#container {
+	font-size: 1.5em;	color: #444;	font-weight: bold;	text-transform: uppercase;	text-align: center;	margin-bottom: 20px;}
 h4 {
     font-size: 1.3em;
     color: #444;
@@ -93,10 +105,6 @@ h6 {
 background: url("../images/module-icon-2.png") no-repeat top center;
 }
 
-#module-row2 ul li.module.cl {
-background: url("../images/module-icon-4.png") no-repeat top center;
-}
-
 #module-row1 ul li.module p,  #module-row2 ul li.module p {
 	text-align:left;
 }
@@ -119,29 +127,44 @@ a {
 }
 
 a:hover {
-	color: #f45d4f;}
+	color: #f45d4f;
+}
 #topContent p {
 	font-size: 1em;	line-height: 120%;
 	text-align: left;
-	margin: 0 0 5px 0;}
+	margin: 0 0 5px 0;
+}
 #mainContent h1, 
-.main-content h1 {	font-size: 18px;	font-weight: bold;	padding: 0 0 10px 0;	margin: 0 0 10px 0;	text-align: center;	line-height: normal;}
-blockquote p {	font-size: 1em;	line-height: normal;	margin-bottom: 1px;	margin-top: 1px;	font-weight: 300;}
-blockquote span {	font-style: normal;
-	font-weight: bold;}
+.main-content h1 {
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0 0 10px 0;
+	margin: 0 0 10px 0;
+	text-align: center;
+	line-height: normal;}
+blockquote p {
+	font-size: 1em;
+	line-height: normal;
+	margin-bottom: 1px;
+	margin-top: 1px;
+	font-weight: 300;
+}
+blockquote span {
+	font-style: normal;
+	font-weight: bold;
+	}
 
 pre code {
-			font-weight: bold;
-			
-	}
+	font-weight: bold;
+}
 
 pre {
 	background-color: #efefef;
-    padding: 10px;
-    color: teal;
-}
+	padding: 10px;
+	color: teal;
+	}
 
-pre span{
-		color: orange;
-		text-align: center;
-}
+pre span {
+	color: orange;
+	text-align: center;
+	}
