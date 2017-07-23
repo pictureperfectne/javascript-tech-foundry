@@ -93,6 +93,10 @@ h6 {
 background: url("../images/module-icon-2.png") no-repeat top center;
 }
 
+#module-row2 ul li.module.cl {
+background: url("../images/module-icon-4.png") no-repeat top center;
+}
+
 #module-row1 ul li.module p,  #module-row2 ul li.module p {
 	text-align:left;
 }
