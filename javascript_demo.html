@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Robinson - Tech-Foundry JavaScript Demonstration</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="js/demo.js"></script>
+<link rel="icon" href="images/mike_16.png">
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/javascript_demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+<header title="Michael Robinson - Tech-Foundry JavaScript Demonstration"  alt="Michael Robinson - Tech-Foundry JavaScript Demonstration">
+</header>
+  <article id="topContent">
+    <h1>Javascript Demonstration</h1>
+	<h3>Challenge</h3>
+    <p>The challenge for this demonstration, was to allow a user to update static web page content. A text editor plugin, HTML form or a scripted solution was not an option in this case. </p>
+	<h3>Solution</h3>
+	<p>A JSON object file was used to store dynamic content. This file can be easily updated updated in a text editor and uploaded to the server. The JSON file is simply parsed as a JavaScript object and the content is presented everytime the page is loaded or refreshed.</p>
+	<h3>Application</h3>
+</article>	
+	<div class="clearfloat" ></div>
+	<div class="module-wrapper">
+	<div id="module-row1">
+	<ul>
+		<li class="module">
+		<h4>Demonstration 1</h4>
+		<p>Utilizes a JavaScript FOR loop and STRING CONCATENATION to populate HTML elements.</p>
+		<a href="#" id="demo1" onclick="loopObj(); return false;"class="more-link">Click</a>		
+		</li>
+	
+		<li class="module">
+		<h4>Demonstration 2</h4>
+		<p>Utilizes the jQuery JavaScript library to populate HTML elements</p>
+		<a href="#" id="demo2" class="more-link" >Click</a>
+		</li>
+	
+		<li class="module">
+		<h4>Demonstration 3</h4>
+		<p>Utilizes JavaScript to populate HTML elements</p>
+		<a href="#" id="demo3" onclick="loadObj(); return false;" class="more-link">Click</a>
+		</li>
+		</ul>
+		</div>
+	</div>
+<div class="clearfloat" ></div>
+<!--///////////////////////////////////////////////////////////DEMO PAGE /////////////////////////////////////// -->
+<h3>DEMO PAGE</h3>
+<!-- begin mainContent-->
+<article id="mainContent"><h3 id="demoTitle"></h3><div id="quotes"></div></article>
+	<!-- end mainContent-->
+	<div class="clearfloat" ></div>
+<h3>THE CODE</h3>
+<h6>JSON Object File</h6>
+<pre>
+<code>
+<span>Variable 'quotes' holds the array keys: 'quote' and 'person'</span>
+var quotes = {
+	"testimonials": [{
+		"quote": "Just want to say thank you very much By far the best customer service I've ever experienced I
+		appreciate the extra effort by you to make me happy.",
+		"person": "Dean, Florida"
+	},
+	{
+		"quote": "I called and not only did he take the time to explain things to me, but he went above and beyond
+		the level of service of any gun manufacturer I have dealt with. How often does one get such great service
+		directly from the owner!",
+		"person": "Eugene, Colorado"
+	},
+	{
+		"quote": "After spending some time there I've concluded if I searched the entire United States I couldn't
+		have transferred the business to a better company.",
+		"person": "Larry Seecamp, Arizona"
+	}]
+};
+
+</code>
+</pre>	
+<h6>DEMONSTRATION 1: function loopObj() called. FOR loop iterates object. Name values added to HTML elements and appended to the document.</h6>
+<!-- DEMO 1-->
+	<pre><code>function loopObj(){
+<span>Replace the demostration title</span>
+	document.getElementById("demoTitle").innerHTML = "Testimonials - Loop Demonstration";
+<span>Clear content</span>
+	document.getElementById("quotes").innerHTML = "";
+<span>Variable to hold content</span>	
+	var text = "";
+<span>Loop through object</span>
+	for (var key in quotes.testimonials) {
+		if (quotes.testimonials.hasOwnProperty(key)) {
+<span>If name values exist place in elements and add to content</span>		
+			text += "&lt;blockquote&gt;&lt;p&gt;"+quotes.testimonials[key].quote+"&lt;/p&gt;";
+			text += "&lt;span&gt;"+quotes.testimonials[key].person+"&lt;/span&gt;&lt;/blockquote&gt;";
+		}
+	}
+<span>Append content file to document</span>			
+	document.getElementById("quotes").innerHTML = text;
+	}
+</code></pre>
+<!-- DEMO 2-->
+<h6>DEMONSTRATION 2: jQuery was used for a quick version of the same solution.</h6>
+<pre>
+<code>
+<span>Binds a click function to demo button</span>
+$('#demo2').click(function () { 
+	event.preventDefault();
+<span>Renames title and clears content</span>
+	$('#demoTitle' ).html("Testimonials - jQuery Demonstration");
+	$('#quotes').empty();
+<span>Iterates over the object and sets the text elements</span>	
+		$.each(quotes.testimonials, function(key, val) {
+		<span>Appends elements to document</span>	
+		$( "&lt;blockquote/>").html( "&lt;p>" + val.quote + "&lt;/p>&lt;span>" + val.person + "&lt;/span>" ).appendTo( "#quotes" );	
+		});
+});
+</code>
+</pre>
+<!-- DEMO3-->
+<h6>DEMONSTRATION 3: function loopObj() called. FOR loop iterates object. Name values added to HTML elements and appended to the document.</h6>
+<pre>
+<code>
+<span>Loads function</span>
+function loadObj() {
+<span>Renames title and clears content</span>
+	document.getElementById("demoTitle").innerHTML = "Testimonials - JavaScript Demonstration";
+	document.getElementById("quotes").innerHTML = "";
+<span>Defines variables</span>
+		var x = quotes.testimonials;
+		var div = document.getElementById("quotes");
+		var text = "";
+		var i;	
+<span>There are two loops. loop one reads each quote and the second places the values in tedxt nodes and appends to document</span>
+		for (var key in x){
+		var i = x[key]
+			for(var y in i){
+				var blockquote = document.createElement('blockquote');
+				var p = document.createElement('p');
+				var span = document.createElement('span');
+					txt1 = document.createTextNode(i["person"]);
+					span.appendChild(txt1);
+					txt2 = document.createTextNode(i["quote"]);
+					p.appendChild(txt2);
+					blockquote.appendChild(p);
+					blockquote.appendChild(span);
+			}
+			div.appendChild(blockquote);
+		}
+}
+</code>
+</pre>
+<div class="clearfloat" ></div>
+	
+	<div class="module-wrapper">
+	<div id="module-row2">
+	<ul>
+	<li class="module">
+		<h4>GitHub Repository</h4>
+		<p>click to down load project</p>
+		<a href="https://github.com/pictureperfectne/javascript-tech-foundry" id="github" target="_blank" class="more-link">Click</a>
+	</li>
+	<li class="module">
+		<h4>Clear Content</h4>
+		<p>Click below to clear content.</p>
+		<a href="#" id="demo5" class="more-link">Click</a>
+	</li>
+	
+	</ul>
+	</div>
+	</div>
+
+	<div class="clearfloat" ></div>
+
+	<footer><p>Copyright &copy; 2017 Michael Robinson</p></footer>
+
+</div>
+<!-- end of container -->
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<script type="text/javascript">
+$(document).ready(function(){
+
+////////////////////////////////// DEMO 2
+$('#demo2').click(function () { 
+	event.preventDefault();
+	//
+	$("#demoTitle").html("Testimonials - jQuery Demonstration");
+	// renames page title
+	$('#quotes').empty();
+		$.each(quotes.testimonials, function(key, val) {
+		$( "<blockquote/>").html( "<p>" + val.quote + "</p><span>" + val.person + "</span>" ).appendTo( "#quotes" );	
+		});
+});
+
+$('header').click(function(){ window.location="javascript_demo.html";});
+$('#demo5').click(function () {
+	$('#quotes').empty();
+});
+
+});	
+// ////////////////////////////////////////////////////////////////FUNCTIONS//////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////// DEMO 1
+function loopObj(){
+	document.getElementById("demoTitle").innerHTML = "Testimonials - JavaScript Loop Demonstration";
+	document.getElementById("quotes").innerHTML = "";
+	var text = "";
+	for (var key in quotes.testimonials) {
+		if (quotes.testimonials.hasOwnProperty(key)) {
+			text += "<blockquote><p>"+quotes.testimonials[key].quote+"</p>";
+			text += "<span>"+quotes.testimonials[key].person+"</span></blockquote>";
+		}
+	}
+	document.getElementById("quotes").innerHTML = text;
+
+}
+	
+// //////////////////////////////////////////////////////////////DEMO 2
+function loadObj() {
+// renames page title
+	document.getElementById("demoTitle").innerHTML = "Testimonials - JavaScript Demonstration";
+	document.getElementById("quotes").innerHTML = "";
+		var x = quotes.testimonials;
+		var div = document.getElementById("quotes");
+		var text = "";
+		var i;	
+//there are two loops. loop one reads each quote and the second places the 
+		for (var key in x){
+		var i = x[key]
+		// get to the nested obj
+			for(var y in i){
+				var blockquote = document.createElement('blockquote');
+				var p = document.createElement('p');
+				var span = document.createElement('span');
+					txt1 = document.createTextNode(i["person"]);
+					span.appendChild(txt1);
+					//
+					txt2 = document.createTextNode(i["quote"]);
+					p.appendChild(txt2);
+				//
+					blockquote.appendChild(p);
+					blockquote.appendChild(span);
+			}
+			div.appendChild(blockquote);
+		}
+}
+
+</script>
+</body>
+</html>
